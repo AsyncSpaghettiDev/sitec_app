@@ -1,0 +1,25 @@
+.nav {
+    background: url(/assets/images/navbar-gris.png) no-repeat;
+    background-position: center;
+    height: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+    border-radius: 0.25rem;
+}
+
+.nav_a {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    text-decoration: none;
+    color: #5f5e5c;
+    margin-top: 5px;
+    padding: 0 1em;
+    height: 37px;
+
+    &:hover {
+        background: #fff;
+    }
+}

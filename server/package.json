@@ -1,0 +1,14 @@
+{
+  "name": "sitec_backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "type": "commonjs",
+  "scripts": {
+    "dev": "concurrently \"tsc --watch --project ./\" \"nodemon ./dist\"",
+    "build": "tsc --project ./"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

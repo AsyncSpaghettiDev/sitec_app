@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url('/assets/images/background.jpg');
+  background-position: center top;
+  background-size: auto;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  margin: 1rem;
+  font: 18px 'Montserrat', sans-serif;
+  color: #2e2929;
+  background-color: #FAFAFA;
+}
+
+.app_container {
+  margin-inline: auto;
+  max-width: 1050px;
+  border-radius: 0.5em;
+}
