@@ -7,6 +7,7 @@ export const Home = () => {
                 control y clave. Es probable que el sistema pida cambiar la clave y actualizar el correo electrónico.</p>
             <div className='flex justify-center'>
                 <iframe
+                    allowFullScreen={true}
                     className='aspect-video max-w-xl w-full px-4 mx-2'
                     src="https://www.youtube.com/embed/-XOJ9tQHpsY" />
             </div>
