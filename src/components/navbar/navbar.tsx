@@ -1,16 +1,25 @@
+import { useContext } from 'react'
+import { Link } from 'react-router-dom'
+import { Context } from '../../context'
 import classNames from './navbar.module.scss'
 import responsive from './student.module.scss'
 
 export const Navbar = () => {
+    const { isLoggedIn } = useContext(Context)
+
+    return !isLoggedIn ? <NavbarDefault /> : <NavbarLogged />
+}
+
+const NavbarDefault = () => {
     return (
         <nav className={classNames.nav}>
-            <a className={classNames.nav_a} href="/">Inicio</a>
-            <a className={classNames.nav_a} href="/acceso.html">Acceso</a>
+            <Link className={classNames.nav_a} to="/">Inicio</Link>
+            <Link className={classNames.nav_a} to="/acceso">Acceso</Link>
         </nav>
     )
 }
 
-export const NavbarStudent = () => {
+const NavbarLogged = () => {
     return (
         <nav className={responsive.nav}>
             <label className={responsive.trigger_btn} htmlFor={responsive.menu_trigger}>
@@ -18,14 +27,14 @@ export const NavbarStudent = () => {
             </label>
             <input hidden type="checkbox" id={responsive.menu_trigger} />
             <ul className={responsive.nav_list}>
-                <li className={responsive.nav_item}><a className={responsive.nav_a} href="panel.html">Mi Panel</a></li>
-                <li className={responsive.nav_item}><a className={responsive.nav_a} id="changePassword" href="#">Cambiar Clave</a></li>
-                <li className={responsive.nav_item}><a className={responsive.nav_a} id="changeEmail" href="#">Cambiar Email</a></li>
-                <li className={responsive.nav_item}><a className={responsive.nav_a} href="reinscripcion.html">Reinscripción</a></li>
-                <li className={responsive.nav_item}><a className={responsive.nav_a} href="avance-ciclo.html">Avance Ciclo</a></li>
-                <li className={responsive.nav_item}><a className={responsive.nav_a} href="kardex.html">Kardex</a></li>
-                <li className={responsive.nav_item}><a className={responsive.nav_a} href="log.html">Log</a></li>
-                <li className={responsive.nav_item}><a className={responsive.nav_a} href="/">Salir Sistema</a></li>
+                <li className={responsive.nav_item}><Link className={responsive.nav_a} to="panel">Mi Panel</Link></li>
+                <li className={responsive.nav_item}><Link className={responsive.nav_a} id="changePassword" to="#">Cambiar Clave</Link></li>
+                <li className={responsive.nav_item}><Link className={responsive.nav_a} id="changeEmail" to="#">Cambiar Email</Link></li>
+                <li className={responsive.nav_item}><Link className={responsive.nav_a} to="reinscripcion">Reinscripción</Link></li>
+                <li className={responsive.nav_item}><Link className={responsive.nav_a} to="avance_ciclo">Avance Ciclo</Link></li>
+                <li className={responsive.nav_item}><Link className={responsive.nav_a} to="kardex">Kardex</Link></li>
+                <li className={responsive.nav_item}><Link className={responsive.nav_a} to="log">Log</Link></li>
+                <li className={responsive.nav_item}><Link className={responsive.nav_a} to="/">Salir Sistema</Link></li>
             </ul>
         </nav >
     )
